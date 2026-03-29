@@ -1,0 +1,76 @@
+ /* tailwindcss */
+ @import "tailwindcss";
+ /* daisy ui */
+ @plugin "daisyui";
+
+
+ @theme {
+     --color-app-bg: var(--bg-default);
+     --color-app-text: var(--text-default);
+ }
+
+ @layer base {
+     :root {
+         --bg-default: #ffffff;
+         --text-default: #0f172a;
+     }
+
+     .dark {
+         --bg-default: #0f172a;
+         --text-default: #f1f5f9;
+     }
+
+     /* QUAN TRỌNG: Cấu hình full page */
+     html, body, #root {
+         height: 100%;
+         margin: 0;
+         padding: 0;
+     }
+
+     body {
+         background-color: var(--bg-default);
+         color: var(--text-default);
+         /* Giúp chuyển màu mượt mà trên toàn trang */
+         transition: background-color 0.3s ease;
+         min-height: 100vh;
+         display: flex;
+         flex-direction: column;
+     }
+ }
+
+
+ @media print {
+
+     /* reset layout khi in */
+     html, body, #root {
+         height: auto !important;
+         min-height: auto !important;
+         display: block !important;
+         padding: 0 !important;
+         margin: 0 !important;
+     }
+
+     body {
+         background-color: #fff !important;
+         color: #000 !important;
+         display: block !important;
+     }
+
+     /* Table in PDF */
+     table {
+         font-size: 10px !important;
+         width: 100% !important;
+         border-collapse: collapse;
+     }
+
+     th, td {
+         padding: 2px 4px !important;
+     }
+
+     /* Chữ ký / footer */
+     .print-flex {
+         display: flex !important;
+         justify-content: space-between !important;
+         page-break-inside: avoid;
+     }
+ }

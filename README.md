@@ -24,5 +24,5 @@ The system helps businesses manage products, track inventory, and handle sales t
 
 ## Team
 - Lâm Hùng
-- Hồ Gia Huy
+- Hồ Gia Huy_2280601142
 - Nguyễn Lê Minh Trung
